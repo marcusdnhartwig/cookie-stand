@@ -1,3 +1,23 @@
 body {
-  background-color: lightpink;
+  background-color: salmon;
+  font-family: 'Open Sans', 
+  sans-serif;
 }
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  background-color: beige;
+  width: 90%;
+  height: 50vh;
+  margin: 0 auto;
+  border: 5px solid coral;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* this or the one above. */
+  align-items: space-around; /*this alignes up and down*/
+}
+
+<section needs id= container>
