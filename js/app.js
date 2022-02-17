@@ -7,84 +7,84 @@ function randomCustomerNum (min, max){
   return Math.floor(Math.random() * (max - min + 1) + min); 
 }
 
-let salmonCities = [];  
+let salmonBakery = [];  
 
-function City (cityName, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer){
-  this.cityName = cityName; 
-  this.minHourlyCustomers = minHourlyCustomers; 
-  this.maxHourlyCustomers = maxHourlyCustomers; 
-  this.avgCookiesPerCustomer = avgCookiesPerCustomer; 
+function Store(storeName, minimumHourlyCustomer, maximumHourlyCustomer, averageCookiePerCustomer){
+  this.storeName = storeName;
+  this.minimumHourlyCustomer = minimumHourlyCustomer;
+  maximumHourlyCustomer = maximumHourlyCustomer;
+  averageCookiePerCustomer = averageCookiePerCustomer;
   this.customersPerHour = [];
-  this.cookiesPurchasedPerHour = []; 
-  this.totalCookiesPerDay = 0; 
-  salmonCities.push(this); 
+  this.cookiesPurchasedPerHour = [];
+  this.totalCookiesPerDay = 0;
+  salmonBakery.push(this);
 }
 
-City.prototype.getCustomersPerHour = function (){
+Store.prototype.getCustomersPerHour = function(){
   for (let i = 0; i < storeHours.length; i++){
-    let currentHourCustomers = randomCustomerNum(this.minHourlyCustomers, this.maxHourlyCustomers);
+    let currentHourCustomers = randomCustomerNum(this.minimumHourlyCustomer, this.maxHourlyCustomer);
     this.customersPerHour.push(currentHourCustomers);
   }
 }
 
-City.prototype.getCookiesPurchasedPerHour = function(){
+Store.prototype.getCookiesPurchasedPerHour = function(){
   for (let i = 0; i < storeHours.length; i++){
-    let actionA = this.avgCookiesPerCustomer * this.customersPerHour[i]; 
-    let actionB = Math.round(actionA); 
-    this.cookiesPurchasedPerHour.push(actionB);
+    let averageSalmons = this.averageCookiePerCustomer * this.customersPerHour[i];
+    let hourlySalmons = Math.round(averageSalmons);
+    this.cookiesPurchasedPerHour.push(hourlySalmons);
   }
 }
 
-City.prototype.getTotalCookiesPurchased = function (){
+Store.prototype.gettotalCookiesPerDay = function(){
   for (let i = 0; i < this.cookiesPurchasedPerHour.length; i++){
-    this.totalCookiesPerDay += this.cookiesPurchasedPerHour[i]; 
+    this.totalCookiesPerDay += this.cookiesPurchasedPerHour[i];
   }
 }
 
 
-let seattle = new City ('Seattle', 23, 65, 6.3); 
+let seattle = new Store ('Seattle', 23, 65, 6.3); 
 seattle.getCustomersPerHour(); 
 seattle.getCookiesPurchasedPerHour(); 
-seattle.getTotalCookiesPurchased(); 
+seattle.gettotalCookiesPerDay(); 
 console.log(seattle); 
-console.log(salmonCities); 
+console.log(salmonBakery); 
 
-let tokyo = new City ('Tokyo', 3, 24, 1.2); 
+let tokyo = new Store ('Tokyo', 3, 24, 1.2); 
 tokyo.getCustomersPerHour(); 
 tokyo.getCookiesPurchasedPerHour(); 
-tokyo.getTotalCookiesPurchased(); 
+tokyo.gettotalCookiesPerDay(); 
 console.log(tokyo); 
-console.log(salmonCities); 
+console.log(salmonBakery); 
 
-let dubai = new City ('Dubai', 11, 38, 3.7); 
+let dubai = new Store ('Dubai', 11, 38, 3.7); 
 dubai.getCustomersPerHour(); 
 dubai.getCookiesPurchasedPerHour(); 
-dubai.getTotalCookiesPurchased(); 
+dubai.gettotalCookiesPerDay(); 
 console.log(dubai); 
-console.log(salmonCities); 
+console.log(salmonBakery); 
 
-let paris = new City ('Paris', 20, 38, 2.3); 
+let paris = new Store ('Paris', 20, 38, 2.3); 
 paris.getCustomersPerHour(); 
 paris.getCookiesPurchasedPerHour(); 
-paris.getTotalCookiesPurchased(); 
+paris.gettotalCookiesPerDay(); 
 console.log(paris); 
-console.log(salmonCities); 
+console.log(salmonBakery); 
 
-let lima = new City ('Lima', 2, 16, 4.6); 
+let lima = new Store ('Lima', 2, 16, 4.6); 
 lima.getCustomersPerHour(); 
 lima.getCookiesPurchasedPerHour(); 
-lima.getTotalCookiesPurchased(); 
+lima.gettotalCookiesPerDay(); 
 console.log(lima); 
-console.log(salmonCities); 
+console.log(salmonBakery); 
 
 const parentElement = document.getElementById('sales-table'); 
 
 function renderTableMain (){
-  for (let i = 0; i < salmonCities.length; i++){
-    let currentCity = salmonCities[i]; 
+  for (let i = 0; i < salmonBakery.length; i++){
+    let currentCity = salmonBakery[i]; 
     let currentRow = document.createElement('tr');  
     let tableData = document.createElement('td'); 
-    tableData.textContent = currentCity.cityName;
+    tableData.textContent = currentCity.salmonBakery;
     parentElement.appendChild(currentRow); 
     currentRow.appendChild(tableData); 
     for (let j = 0; j < currentCity.cookiesPurchasedPerHour.length; j++){
@@ -102,7 +102,7 @@ function renderTableHeader(){
   let cityHeading = document.createElement('th');
   parentElement.appendChild(tableHeading); 
   tableHeading.appendChild(cityHeading); 
-  cityHeading.textContent = 'City Names'; 
+  cityHeading.textContent = 'stores'; 
   for (let i = 0; i < storeHours.length; i++){
     let currentTime = storeHours[i]; 
     let currentTableHeader = document.createElement('th'); 
@@ -402,7 +402,7 @@ renderTableMain();
 
 // let seattle = new City('Seattle', 23, 65, 6.3);
 // seattle.getCustomersPerHr();
-// seattle.cookiesPerHr();
+//seattle.cookiesPerHr();
 // seattle.totalCookies();
 // console.log('Seattle', seattle)
 // console.log(myCities);
