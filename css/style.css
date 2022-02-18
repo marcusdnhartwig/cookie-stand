@@ -1,22 +1,69 @@
 body {
   background-color: salmon;
-  font-family: 'Open Sans', 
-  sans-serif;
+  font-family: fantasy;
+}
+
+header{
+  background-color: #af7f5f;
+  height: 100px;
+  margin-bottom: 30px; 
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+}
+
+nav {
+  text-decoration: ;
 }
 
 h1 {
   text-align: center;
+  padding-bottom: 10px;
+  text-decoration: underline;
+  
+}
+#hindex {
+  color: #00612c;
 }
 
-#container {
-  background-color: beige;
-  width: 90%;
-  height: 50vh;
-  margin: 0 auto;
-  border: 5px solid coral;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* this or the one above. */
-  align-items: space-around; /*this alignes up and down*/
+#pindex {
+  text-align: center;
+  font-family: cursive;
+  padding-top: 20px;
 }
 
+#salmon {
+  padding-left: 40px;
+  padding-top: 30px;
+}
+
+#Lseattle {
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+#Ltokyo {
+  
+}
+
+#Ldubai
+
+#Lparis
+
+#Llima
+
+main{
+  width: 960px;
+  margin: auto;
+}
+
+td{
+  border: 3px #ed19df solid;
+  padding: 10px;
+}
+
+th{
+  border: 3px #2cee73 dashed;
+  
+  padding: 10px;
+}
