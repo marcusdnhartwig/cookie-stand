@@ -71,6 +71,7 @@ seattle.gettotalCookiesPerDay();
 console.log(seattle); 
 console.log(salmonBakery); 
 
+
 // seattle.render();
 
 let tokyo = new Store ('Tokyo', 3, 24, 1.2); 
