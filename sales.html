@@ -1,82 +1,60 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Sales</title>
-  <link rel="stylesheet" href="/css/reset.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salmon Cookies</title>
+  <!-- <link rel="stylesheet" href="CSS/reset.css"> -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-  <header>
-    <h1>Salmon Cookie Bakery</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-      </ul>
-    </nav>
-  
-  </header>
-  <h1>Salmon Cookie Sales</h1>
-  
+  <h1 id=salmoncities>Salmon Cookies</h1>
   <main>
-
-    <section id="stores"></section>
-
-    <table id="sales-table">
-    </table>
-
-    <h1 id="seattle-hourly-sales"></h1>
-    <ul id="seattle-list">
-    </ul>
-    <h1 id="tokyo-hourly-sales"></h1>
-    <ul id="tokyo-list">
-
-    </ul>
-    <h1 id="dubai-hourly-sales"></h1>
-    <ul id="dubai-list">
-    </ul>
-    <h1 id="paris-hourly-sales"></h1>
-    <ul id="paris-list">
-    </ul>
-    <h1 id="lima-hourly-sales"></h1>
-    </ul>
-    <form id="my-form">
-      <fieldset>
-        <legend>Gives your fieldset some context</legend>
-
-        <!-- One way for inputs and labels ***for on label must match id on input ***-->
-        <label for="fullName">Full Name</label>
-        <input type="text" name="fullName" id="fullName">
-        <!-- event.target.fullName.value -->
-        <!-- input = {
-          <!-- fullName: Audrey Patterson -->
-        <!-- } -->
-
-        <!-- 2nd way  nesting your input in your label -->
-         <label> Age
-           <input type="number" name="age" required>
-           <!-- event.target.age.value -->
-         </label>
-
-         <label for="housewives">Fave housewives franchise?</label>
-         <select name="housewives" id="housewives">
-           <option value=""><---Pick One---></option>
-           <option value="slc">SLC</option>
-           <option value="bevHills">Beverly Hills</option>
-           <option value="none">None</option>
-         </select>
-      </fieldset>
-      <button type="submit">Submit</button>
-    </form>
-
-
-
-   
+    <h2>Pet's Salmon Cookies</h2>
+     <section id="salmon-cookies"></section>
     
-    <footer></footer>
+     <p id='spacer'><a href="index.html" id='indexhome'>Home</a></p>
+
+<form id="sales-form">
+  
+<fieldset>
+<legend>Calculate average number of cookies sold per hour per location</legend>
+<legend id='legend'>Find out if your city will be the next to bring home our legendary Salmon Cookies!</legend>
+    <label for="'location">Locations</label>
+    <input type="text" name="location" id="location">
+  </label>
+
+  
+
+  <label>
+    Minimun Customers:
+    <input type="number" name="minCust">
+  </label>
+
+  <label>
+    Maximum Customer:
+    <input type="number" name="maxCust">
+  </label>
+
+  <label>
+    Average Cookie Per Hour:
+    <input type="number" name="avgCookieSale">
+  </label>
+
+  <button type="submit">Submit</button>
+
+
+</fieldset>
+
+</form>
+
+<table id="table"></table>
   </main>
-  <script src="js/app.js"></script>
+
+  <script src="/js/app.js"></script>
+ 
+  
 </body>
 
 </html>
